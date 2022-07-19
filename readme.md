@@ -1,3 +1,24 @@
+## 原理
+```js
+Observer（数据监听器） : 
+Observer的核心是通过Object.defineProprtty()来监听数据的变动，
+这个函数内部可以定义setter和getter，每当数据发生变化，就会触发setter。
+这时候Observer就要通知订阅者，订阅者就是Watcher
+
+Watcher（订阅者） :
+ Watcher订阅者作为Observer和Compile之间通信的桥梁，
+ 主要做的事情是：
+在自身实例化时往属性订阅器(dep)里面添加自己
+自身必须有一个update()方法
+待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调
+Compile（指令解析器） : 
+Compile主要做的事情是解析模板指令，将模板中变量替换成数据，
+然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，
+添加鉴定数据的订阅者，一旦数据有变动，收到通知，更新试图
+```
+
+
+
 ## 安装依赖包
 ```
 npm i webpack webpack-cli webpack-dev-server html-webpack-plugin -S
