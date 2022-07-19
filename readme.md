@@ -4,7 +4,14 @@ npm i webpack webpack-cli webpack-dev-server html-webpack-plugin -S
 ```
 
 ## 配置webpack目录
-```
+```js
+
+src/index.js // 测试Vue部分
+vue/index.js // 初始化Vue，暴露出一些方法一些操作
+vue/util.js // 提取{{cxx}}并替换工具
+observe/ // Observer核心 Dep Watcher Observer
+
+vue2.js // vue的源码
 npm run dev 启动
 npm run build 编译
 ```
