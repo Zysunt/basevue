@@ -1,4 +1,4 @@
-## 原理
+## vue响应式 原理
 ```js
 Observer（数据监听器） : 
 Observer的核心是通过Object.defineProprtty()来监听数据的变动，
@@ -19,7 +19,9 @@ Compile主要做的事情是解析模板指令，将模板中变量替换成数�
 添加鉴定数据的订阅者，一旦数据有变动，收到通知，更新试图
 ```
 
-## vuex 基于vue的插件
+## vuex3 基于vue的插件
+vuex3官网图片
+<img src="./vuex.png" />
 ```js
 数据流 从根组件root到子组件再到孙子组件
 需要有安装插件的方法install,还有Store类或者构造方法
