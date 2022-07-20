@@ -19,6 +19,22 @@ Compile主要做的事情是解析模板指令，将模板中变量替换成数�
 添加鉴定数据的订阅者，一旦数据有变动，收到通知，更新试图
 ```
 
+## vuex 基于vue的插件
+```js
+数据流 从根组件root到子组件再到孙子组件
+需要有安装插件的方法install,还有Store类或者构造方法
+Store里面需要有state，getters，mutations，actions，modules
+可以直接拿到state，并且是响应式的，直接借助new Vue()的data()来实现响应式
+利用Vue.mixin将每个组件通过beforeCreate()都注册store
+改store需要通过mutations（同步）或者action（异步），所以需要再Store里面添加dispatch方法和commit
+mutations和actions自己暴露出方法，调用实际传入的options里的方法，利用Object.keys()取到方法名getterName，mutationsName，actionsName
+需要注意的是commit方法在actions异步调用的时候this指向问题，所以不要用普通函数，直接用箭头函数
+
+关于模块：
+递归构建vuex子模块树状结构，安装installModule所有模块树的getter，mutations，action
+重构module后 dispatch，commit每个函数都执行一次
+
+```
 
 
 ## 安装依赖包
