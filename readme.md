@@ -1,3 +1,20 @@
+## promise 解决无限嵌套
+```
+pending 等待状态
+pending 成功
+rejected 失败
+Promise 的构造器接收一个执行函数 (executor)，可以在这个执行函数里手动地 resolve 和 reject 一个 Promise
+
+初始pending，resolve()转变为成功状态，reject()为失败状态
+状态一旦改变不可更改
+resolve(xx)数据会传给then(成功，失败)成功回调函数
+reject(xx) 数据会传给then中 的失败回调函数方法
+
+成功状态调用成功方法resolve，失败状态调用失败方法 reject
+
+需要把then中的成功失败回调保存,状态改变时执行存起来的成功失败回调
+```
+
 ## vue响应式 原理
 ```js
 Observer（数据监听器） : 
